@@ -53,15 +53,15 @@ def createOrder(request, pk):
 
 def updateOrder(request, pk):
     order = Order.objects.get(id=pk)
-    form = OrderForm(instance=order)
+    formset = OrderForm(instance=order)
 
     if request.method == 'POST':
-        form = OrderForm(request.POST, instance=order)
-        if form.is_valid(): 
-            form.save()
+        formset = OrderForm(request.POST, instance=order)
+        if formset.is_valid(): 
+            formset.save()
             return redirect('/')
 
-    context = {'form': form}
+    context = {'formset': formset}
     return render(request, 'accounts/order_form.html', context)
 
 def deleteOrder(request, pk):
