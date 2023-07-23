@@ -21,3 +21,9 @@ urlpatterns = [
     path('delete_order/<str:pk>/', views.deleteOrder, name='delete_order'),
 
 ]
+'''
+1 - Submit email form   for                 //PasswordResetView.as_view()
+2 - Email sent successfuL message           //PasswordResetDoneView.as_view()
+3 - Link to password resT form in email     //PasswordResetConfimView.as_view()
+4 - Password successfuL message             //PasswordResetCompleteView.as_view()
+'''
